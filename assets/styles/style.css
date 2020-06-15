@@ -1,0 +1,154 @@
+/* Global Reset  */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* Variable Declaration */
+:root {
+    --color-white: #fafafa;
+    --color-primary: #32aafa;
+    --color-primary-dark: #1c95e6;
+    --color-blueBlack:  #021c1e;
+    --color-cadetBlue:  #004445;
+}
+
+body {
+    position: relative;
+    background: #ccc;
+    background-image: url("../background.jpg");
+    background-size: cover;
+    overflow: hidden;
+}
+
+/* Canvs Style  */
+.canvas-wrap{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#canvas {
+    border: 25px solid var(--color-primary);
+    border-radius: 10px;
+    width: 80vw;
+    height: 65vh;
+    background: var(--color-white);
+    box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s;
+}
+
+/* Buttons Style Start  */
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn {
+    outline: none;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    background-color: var(--color-blueBlack);
+    border: 2px solid transparent;
+    color: var(--color-white);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 15px;
+}
+
+.btn:not(:last-child) {
+    margin-right: 15px;
+}
+
+.buttons__shake {
+    padding: 10px 20px;
+}
+
+.btn:hover {
+    background-color: var(--color-cadetBlue);
+    border-color: var(--color-white);
+}
+.buttons__shake:active {
+    transform: rotate(-15deg);
+}
+
+.buttons__arrow {
+    padding: 10px 20px;
+}
+
+.buttons__arrow:active{
+    transform: translateY(2px);
+}
+
+/* Buttons Style Ends  */
+
+/* Message Instruction */
+.message{
+    position: absolute;
+    bottom: 15%;
+    right: 0;
+    width: 270px;
+    background: var(--color-white);
+    padding: 25px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    letter-spacing: .3s;
+    color: var(--color-blueBlack);
+    animation: moveLeft 1s ease 1, moveRight 2s ease 5s 1;
+    transition: all .2s;
+}
+/* Shake Animation  */
+.shake {
+    animation: shakeit 0.5s ease;
+}
+
+/* animations  */
+@keyframes shakeit {
+    10%,
+    90% {
+        transform: translate3d(-2px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(3px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-5px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(5px, 0, 0);
+    }
+}
+
+@keyframes moveLeft{
+    0%{
+        transform: translateX(180%);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+
+@keyframes moveRight{
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        transform: translate(180%);
+    }
+}
