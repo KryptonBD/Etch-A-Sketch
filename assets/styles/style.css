@@ -106,6 +106,36 @@ body {
     animation: moveLeft 1s ease 1, moveRight 2s ease 5s 1;
     transition: all .2s;
 }
+
+.source-check{
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    color: var(--color-white);
+    background: rgba(0, 0, 0, .2);
+    padding: 10px;
+    font-size: 16px;
+    letter-spacing: .5px;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all .2s;
+}
+
+.source-check img{
+    width: 15px;
+}
+
+.source-check:hover{
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.source-check:hover img{
+    filter: invert(50);
+}
+.source-check:active{
+    transform: translateY(-5px);
+}
 /* Shake Animation  */
 .shake {
     animation: shakeit 0.5s ease;
